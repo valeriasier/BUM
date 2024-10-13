@@ -1,0 +1,183 @@
+var validatePass = false;
+var validatePassConfirm = false;
+
+/**
+ * Verificando el password
+ */
+ function checkPasswordStrength() {
+
+	var number = /([0-9])/;
+	var firstUpper = /^[a-zA-Z]/;
+	var validatePrimeroLetra = false;
+	var validateNumeros = false;
+	var validateMayor8 = false;
+	var validateCaracteresEspeciales = false;
+	var validatePalabrasReservadas = false;
+	var validateCaracteresRepetidos = false;
+
+
+	verificaNivelSeguridadPassword();
+
+	if ($('#changePassword').val().match(firstUpper)) {
+		$('#mayus').addClass('verde');
+		validatePrimeroLetra = true;
+	} else {		
+		$('#mayus').removeClass('verde');
+		validatePrimeroLetra = false;
+	}
+	
+	if ($('#changePassword').val().length >= 8) {		
+		$('#min_ocho').addClass('verde');
+		validateMayor8 = true;
+	} else {
+		$('#min_ocho').removeClass('verde');
+		validateMayor8 = false;
+	}
+	
+	if ($('#changePassword').val().match(number)) {
+		$('#numbrer_symbol').addClass('verde');
+		validateNumeros = true;
+	} else {
+		$('#numbrer_symbol').removeClass('verde');
+		validateNumeros = false;
+	}
+	
+	validateCaracteresEspeciales = validaCaracteresEspeciales($('#changePassword').val());
+	validateCaracteresRepetidos = validaCaracteresRepetidos($('#changePassword').val());
+	validatePalabrasReservadas = validaPalabrasReservadas($('#changePassword').val());
+
+	$("#msg_error_contrasena").html("");
+
+	if (validateCaracteresRepetidos == false){
+		$("#msg_error_contrasena").html("Tu contraseña no puede tener más de dos caracteres iguales.");
+	}
+	if (validatePalabrasReservadas == false){
+		$("#msg_error_contrasena").html("Tu contraseña no puede tener palabras como Telmex o Infinitum");
+	}	
+	if (validateCaracteresEspeciales == false){
+		$("#msg_error_contrasena").html("Tu contraseña solo puede tener estos símbolos  # % . + - _? ");
+	}
+			
+
+	if (validateCaracteresRepetidos == false || 
+		validateCaracteresEspeciales == false || 
+		validatePalabrasReservadas == false){
+		$("#msg_error_contrasena").removeClass("oculto");
+	}else{
+		$("#msg_error_contrasena").addClass("oculto");
+	}
+
+	if ( validatePrimeroLetra == true &&
+		validateNumeros == true &&
+		validateMayor8 == true &&
+		validateCaracteresEspeciales == true &&
+		validatePalabrasReservadas == true &&
+		validateCaracteresRepetidos == true) {
+			validatePass = true;
+		}else{
+			validatePass = false;
+		}
+}
+
+/**
+ * Verifica si hay dos caracteres repetidos
+ * @param {*} texto 
+ * @returns 
+ */
+ function validaCaracteresRepetidos(texto)
+ {
+	 if( texto.length <= 2){
+		 return true;
+	 }
+	 var i,j,c1, c2, siguiente;
+	 for(i=0; i<texto.length; i++)
+	 {
+		 c1 = texto.charAt(i);
+		 for(j=i+1; j<texto.length; j++)
+		 {
+			 c2 = texto.charAt(j);
+			 siguiente=texto.charAt(j+1);
+			 if((c1 == c2)&&(c1 == siguiente))
+			 {
+				 return false;
+			 }else
+			 {
+				 j= texto.length;
+			 }
+		 }
+	 }
+	 return true;
+ }
+
+/**
+ * Verifica que el password no contenga las palabras reservadas telmex o infinitum
+ * @param {*} texto 
+ * @returns 
+ */
+function validaPalabrasReservadas(texto){
+	if( texto.toLowerCase().indexOf("telmex") > -1){
+		return false
+	}else if( texto.toLowerCase().indexOf("infinitum") > -1){
+		return false;
+	}
+	return true;
+}
+
+/**
+ * Verifica que la cadena no tenga caracteres especiales
+ * @param {*} texto 
+ */
+ function validaCaracteresEspeciales(texto){
+	if( texto.length <= 1){
+		return true;
+	}
+	var special_characters = /^[A-Za-z0-9#,%,.,+,-,_,?]+$/g;
+	if( texto.match(special_characters)){
+		return true;
+	}else{
+		return false;
+	}	
+}
+
+/**
+ * Expresion regular para validar un correo electrónico
+ */
+function validateEmail(email) {
+	const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+  }
+
+  /**
+ * Determina el nivel de seguridad de la constraseña
+ */
+function verificaNivelSeguridadPassword(){
+	var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+	var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+	var enoughRegex = new RegExp("(?=.{8,}).*", "g");
+	if($('#changePassword').val().length == 0){
+		$('#password-strength-status').removeClass();
+		$('#seg_txt').html('');	
+		return;
+	}
+	if (false == enoughRegex.test($('#changePassword').val())) {
+		   $('#password-strength-status').removeClass();
+		   $('#password-strength-status').addClass('debil');
+		   $('#seg_txt').html('Débil');		
+	} else if (strongRegex.test($('#changePassword').val())) {
+		   $('#password-strength-status').removeClass();
+		   $('#password-strength-status').addClass('fuerte');
+		   $('#seg_txt').html('Fuerte');
+	} else if (mediumRegex.test($('#changePassword').val())) {
+		   $('#password-strength-status').removeClass();
+		   $('#password-strength-status').addClass('media');
+		   $('#seg_txt').html('Regular');
+	} else {
+		   $('#password-strength-status').removeClass();
+		   $('#password-strength-status').addClass('debil');
+		   $('#seg_txt').html('Débil');		
+	}	
+}
+
+
+  
+    								

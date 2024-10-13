@@ -1,0 +1,923 @@
+.mainHead a:hover {
+      text-decoration: none;
+  }
+  .topHeader {
+      background: #384452;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+  }
+  .familyMenu {
+      font-size: .85em;
+      float: left;
+      margin-left: 75px;
+  }
+  .familyMenu a,
+  .familyMenu a:visited,
+  .addMenu a,
+  .addMenu a:visited,
+  .familyMenu a:hover,
+  .addMenu a:hover {
+      color: #fff;
+  }
+  .addMenu a:hover {
+      text-decoration: underline;
+      cursor: pointer;
+  }
+  .familyMenu a {
+      padding: 10px 15px 5px;
+      display: inline-block
+  }
+  .familyMenu a:hover,
+  .familyMenu a.current {
+      background: #0276BA;
+      font-weight: 400;
+  }
+  .addMenu {
+      float: right;
+      font-size: .75em;
+      display: block;
+      margin-top: 10px;
+  }
+  .addMenu > a {
+      margin-left: 15px;
+  }
+  .addMenu > a:after {
+      content: '|';
+      margin-left: 10px;
+  }
+  .addMenu span a {
+      margin-left: 10px;
+  }
+  .topHeader:after {
+      display: table;
+      content: ' ';
+      clear: both;
+  }
+
+
+/* ============== Body  ================== */ 
+
+
+#content {
+    padding-top: 98px;
+}
+.mainHead {
+    position: fixed;
+    width: 100%;
+    z-index: 100
+}
+.menuWrap {
+    position: relative;
+}
+.menuContainer {
+    font-family: 'Roboto', arial;
+    font-size: .95em;
+    color: #55667a;
+    background: #fff;
+    /*-webkit-font-smoothing: antialiased;*/
+}
+.menuContainer > .fullBox {
+    border-bottom: 1px solid #e0e0e0;
+    max-height: 62px;
+}
+.menuContainer .fullBox:after {
+    content: ' ';
+    display: table;
+    clear: both;
+}
+.logoTmx {
+    width: 51px;
+    height: 28px;
+    display: block;
+}
+.aui .mainMenu {
+    display: inline-block;
+}
+.aui .mainMenu ul {
+    list-style-type: none;
+}
+.ulMenu,
+.logoTmx {
+    display: inline-block;
+    vertical-align: middle;
+}
+.ulMenu {
+    font-family: 'Roboto', arial;
+}
+.ulMenu > li {
+    display: inline-block;
+    margin-left: 17px;
+    vertical-align: top;
+    padding: 20px 5px 17px;
+    border-bottom: 3px solid #fff;
+}
+.ulMenu > li.dropdownOp {
+    position: relative;
+}
+.ulMenu > li:hover {
+    border-bottom: 3px solid #de2f1b;
+}
+.ulMenu a {
+    color: #55667a;
+}
+.aui .singleDropDown {
+    display: none;
+    position: absolute;
+    background: #fcfcfc;
+    padding: 12px 16px;
+    z-index: 99;
+    width: -ms-max-content;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: -o-max-content;
+    top: 60px;
+    left: -5px
+}
+.singleDropDown li {
+    display: block;
+    line-height: 1.7em;
+}
+.ulMenu li:hover .singleDropDown {
+    display: block;
+}
+/*Drop down big menu*/
+
+.menuOpContainer {
+    display: inline-block;
+    left: 249px;
+    width: 846px;
+    position: absolute;
+    display: none;
+}
+.menuOpContainer.bigDisplay {
+    width: 100%;
+}
+/*.menuOpContainer.bigDisplay .innerMenu{width:208px;}*/
+/*.bigSubmenu .fullBox > ul > li.selected .menuOpContainer{display:inline-block;}*/
+
+.ulMenu > li .bigSubOptions > li.firstElem .menuOpContainer {
+    display: inline-block;
+}
+/*.bigSubmenu .fullBox > ul > li:hover .menuOpContainer{display:inline-block;}*/
+
+.bigSubmenu {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #fcfcfc;
+    top: 96px;
+    z-index: 99;
+}
+.bigSubmenu .fullBox > ul {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.05em;
+    font-weight: 400;
+    width: 230px;
+    padding-top: 10px;
+}
+.bigSubmenu .fullBox > ul > li {
+    line-height: 2.5em;
+    height: 37px;
+    position: relative;
+    width: 225px;
+    width: 100%;
+    background: url('https://telmex.com/documents/23517/118129/right_arrow.svg') no-repeat 95% 13px;
+}
+.bigSubmenu .fullBox > ul > li a:hover,
+.bigSubmenu .fullBox > ul > li.selected > a {
+    color: #0276BA
+}
+/*.bigSubmenu .fullBox > ul > li a:visited,*/
+
+.bigSubmenu .fullBox > ul > li a {
+    color: #55667a;
+}
+.bigSubmenu .fullBox > ul > li:hover > a {
+    color: #0276BA;
+}
+.bigSubmenu .fullBox > ul > li a.newItem {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+.bigSubmenu .fullBox > ul > li a.newItem:after {
+    content: 'Nuevo';
+    color: red;
+    position: absolute;
+    right: -35px;
+    top: -8px;
+    font-size: .8em;
+}
+/*.bigSubmenu .fullBox > ul > li a{width:100%;; display:inline-block;}*/
+/*.bigSubmenu .fullBox > ul > li > a:after{content:'>'; color:#00bef5; position:absolute; right:10px; top: 0px;}*/
+
+.innerMenu {
+    display: inline-block;
+    width: 250px;
+    margin-top: 20px;
+    vertical-align: top;
+}
+.innerMenu ul {
+    font-family: 'arial', sans-serif;
+}
+.bigSubmenu .fullBox > ul > li div.innerMenuContent {
+    position: relative;
+    /*font-size:.85em;*/
+    
+    line-height: 1.4em;
+    width: 510px;
+    display: inline-block;
+    vertical-align: top;
+}
+.bigSubmenu .fullBox > ul > li div.innerMenuContent .innerMenu > strong {
+    font-size: 1.02em;
+}
+.bigSubOptions > li > a {
+    cursor: auto;
+}
+/*.bigSubmenu .fullBox > ul > li div.innerMenuContent .innerMenu > strong a:hover{color:#55667a;}*/
+
+.innerMenu ul li a {
+    font-weight: 300;
+    font-size: .9em;
+    margin-top: 8px;
+    display: block
+}
+.innerMenu ul li:first-child a {
+    margin-top: 0px;
+}
+.imageMenu {
+    display: inline-block;
+    width: 305px;
+    vertical-align: top;
+    position: relative;
+    margin-top: 7px;
+}
+.imageMenu figure {
+    padding: 0px;
+    margin: 0px;
+}
+.imageMenu figcaption {
+    font-size: .9em;
+    line-height: 1.4em;
+    font-weight: 300;
+}
+.imageMenu img {
+    margin-bottom: 10px;
+}
+.imageMenu figcaption a,
+.imageMenu figcaption a:visited {
+    display: block;
+    margin-top: 5px;
+    color: #fff !important;
+    margin-top: 12px !important;
+}
+.bigSubmenu {
+    visibility: hidden;
+}
+.ulMenu > li:hover .bigSubmenu {
+    visibility: visible;
+}
+.grayColor {
+    position: absolute;
+    background: #f3f4f6;
+    display: block;
+    z-index: 0
+}
+@media only screen and (max-width: 800px) {
+    .innerMenu strong.sel {
+        background: url('[$dl-reference=/group/20194/com.liferay.portlet.documentlibrary.model.DLFileEntry/383425.xml$]') no-repeat 95% 15px;
+        font-weight: 400;
+        padding: 10px 25px;
+    }
+    .menuContainer .mainMenu {
+        background: url('https://telmex.com/documents/23521/66013/menu.svg') no-repeat;
+    }
+}
+
+
+
+/* ==============  ASIDE MENU v2.1 ================== */ 
+
+
+ 
+ 
+ .asideMenu {
+     float: right;
+     margin-top: 20px;
+     position: relative;
+ }
+ .asideMenu > div,
+ .asideMenu > a {
+     display: inline-block;
+     vertical-align: top;
+     margin-left: 15px;
+ }
+ .asideMenu:before {
+     content: '';
+     position: absolute;
+     width: 20px;
+     height: 23px;
+     background-repeat: no-repeat;
+     left: -10px;
+ }
+
+ .logedUser {
+     position: relative;
+     display: inline-block;
+     vertical-align: middle;
+     margin-right: 50px;
+     padding-right: 20px;
+     background-repeat: no-repeat;
+     cursor: pointer;
+     padding-bottom: 22px;
+ }
+ .logedUser nav {
+     display: none;
+     position: absolute;
+     z-index: 99;
+     background: #fcfcfc;
+     padding: 12px 15px;
+     width: -ms-max-content;
+     width: -webkit-max-content;
+     width: -moz-max-content;
+     width: -o-max-content;
+     font-size: .9em;
+     top: 42px;
+     min-width: 170px;
+     left: -44px;
+ }
+ .logedUser nav a {
+     display: block;
+     color: #55667a;
+     margin-bottom: 7px;
+ }
+ .logedUser nav a:hover {
+     color: #0276BA;
+ }
+ .logedUser nav a:visited {
+     color: #0276BA;
+ }
+ .logedUser nav a:last-child {
+     color: #0276BA;
+ }
+ .logedUser:hover nav {
+     display: block;
+ }
+ .asideMenu > div.noLogedUser {
+     margin-right: 50px;
+     display: none;
+ }
+ /*ON SITE SEARCH*/
+ 
+ #onSiteSearch {
+     border: 1px solid #199cd7;
+     background: white;
+     border-radius: 20px;
+     position: absolute;
+     right: 0;
+     padding: 5px 9px;
+     width: 12px;
+     overflow: hidden;
+     top: -4px;
+     -webkit-transition: all 0.8s;
+     -moz-transition: all 0.8s;
+     transition: all 0.8s;
+ }
+ .chrome #onSiteSearch {
+     padding: 5px 9px;
+ }
+ #onSiteSearch form {
+     min-width: 220px;
+     float: right;
+     margin: 0px;
+ }
+ #onSiteSearch.openBar {
+     width: 210px;
+ }
+ .aui #onSiteSearch select,
+ .aui #onSiteSearch input,
+ #onSiteSearch div {
+     display: inline-block;
+     vertical-align: middle;
+     height: auto;
+     margin-bottom: 0px;
+ }
+ #onSiteSearch form input[type="text"] {
+     border: none;
+     font-size: .95em;
+     color: #384452;
+     font-family: 'Roboto', arial;
+     margin-left: 10px;
+     padding: 0 0 0 10px;
+     box-shadow: none;
+     width: auto;
+ }
+ .aui .selectContainer select {
+     background: transparent;
+     border: none;
+     padding: 5px 16px 5px 8px;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     color: #55667A;
+     font-size: .95em;
+     font-family: 'Roboto', arial;
+     cursor: pointer;
+     width: 85px;
+     line-height: normal;
+     font-weight: bold;
+     margin-left: 5px;
+ }
+ .aui #onSiteSearch select::-ms-expand {
+     display: none;
+ }
+ .aui .selectContainer select option {
+     font-size: .9em;
+ }
+ .selectContainer {
+     position: relative;
+     background-image: url('https://telmex.com/documents/23521/66013/down_arrow.svg/1ba0d588-ff20-f9d5-7652-16be0c4648b5') 85% 60% #f3f6fb;
+     background-repeat: no-repeat;
+     border-radius: 20px 0px 0px 20px;
+     left: -1px;
+ }
+ .aui #onSiteSearch .mainSearchBtn {
+     border: none;
+     background-color: #199cd7;
+     background-image: url('https://telmex.com/documents/23521/66013/lupaBuscador.svg/5a1dd06a-c8c6-602b-c8c0-37ec4cb2489a');
+     background-repeat: no-repeat;
+     cursor: pointer;
+     position: absolute;
+     right: -1px;
+     width: 34px;
+     height: 33px;
+     border-radius: 20px;
+     background-position: center;
+     top: -1px;
+     background-size: 16px 19px;
+ }
+ .aui.chrome .mainSearchBtn {
+     right: 10px;
+ }
+ @media only screen and (max-width: 800px) .menuContainer .mainMenu {
+     background-image: url('https://telmex.com/documents/23521/66013/menu.svg/c9280597-61df-9f57-85b2-18cc94fe5905') no-repeat !important;
+ }
+}
+
+
+
+ /* ================  Responsive Styles V2 ==================== */
+  
+
+
+  .ulMenu a.azul1,
+  .ulMenu a.azul1:hover {
+      text-decoration: none;
+  }
+ 
+  @media only screen and (min-width: 875px) and (max-width: 958px) {
+      .ulMenu > li {
+          margin-left: 5px;
+      }
+  }
+  @media only screen and (min-width: 1086px) and (max-width: 1125px) {
+      .innerMenu {
+          width: 230px;
+      }
+      .bigSubmenu .fullBox > ul > li div.innerMenuContent {
+          width: 475px;
+      }
+  }
+  @media only screen and (max-width: 1150px) {
+      .fullBox {
+          width: 90%;
+      }
+  }
+  @media only screen and (max-width: 1085px) {
+      .imageMenu {
+          display: none;
+      }
+  }
+  /*@media only screen and (max-width: 600px) { .fullBox { width: 90%;} }*/
+  
+  @media only screen and (max-width: 1055px) {
+      .imageMenu {
+          display: none;
+      }
+      /*USER LOGIN*/
+      
+      .logedUser,
+      .noLogedUser {
+          width: 12px;
+          height: 10px;
+          border-radius: 17px;
+          border: 1px solid #bdc4d0;
+          position: absolute;
+          right: 0px;
+          top: -5px;
+          background: url('https://telmex.com/documents/23517/118129/iconUserSmall_2.svg') no-repeat center center;
+          padding: 10px;
+          margin-right: 40px;
+      }
+      .noLogedUser a {
+          display: none;
+      }
+      .asideMenu > div.noLogedUser {
+          margin-right: 40px;
+      }
+      .logedUser span {
+          padding: 12px 15px 0;
+          display: block;
+      }
+      .logedUser nav {
+          right: 0;
+          position: relative;
+          display: block;
+          top: 0;
+          left: 0;
+      }
+      .logedUser > div {
+          background: #fcfcfc;
+          position: absolute;
+          right: -40px;
+          width: -moz-max-content;
+          width: -webkit-max-content;
+          width: max-content;
+          display: none;
+          top: 46px;
+      }
+      .logedUser > div.userOp {
+          display: block
+      }
+  }
+  @media only screen and (max-width: 800px) {
+      #content {
+          padding-top: 50px;
+      }
+      .grayColor {
+          display: none;
+      }
+      .familyMenu {
+          font-size: 1.25em;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          margin-left: 0px;
+      }
+      .familyMenu a {
+          text-align: center;
+          flex-grow: 1;
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }
+      .mainHead {
+          position: fixed;
+          width: 100%;
+          z-index: 99;
+          background: #f2f5fa;
+          height: 50px;
+          font-size: 1.2em;
+      }
+      .mainHead .fullBox {
+          width: 100%;
+      }
+      .menuContainer {
+          background: none;
+      }
+      .menuContainer .mainMenu {
+          cursor: pointer;
+          width: 40px;
+          height: 27px;
+          position: absolute;
+          left: 10px;
+          top: 14px;
+          z-index: 99;
+      }
+      .menuContainer .mainMenu > ul {
+          overflow: auto;
+          position: fixed;
+          left: 0px;
+          top: 0px;
+          height: 100%;
+          padding: 20px 0 1%;
+          width: 0;
+          background: #34495e;
+          top: 30px;
+          background: #636f7e;
+      }
+      .aui .ulMenu > li > ul.singleDropDown {
+          background: #f3f4f6;
+          color: #1a1a1a;
+          padding: 0;
+          left: 0px;
+          font-family: "Roboto Condensed", sans-serif;
+          font-weight: 400;
+      }
+      .ulMenu > li:hover > ul.singleDropDown {
+          display: none;
+      }
+      .ulMenu > li:hover > ul.singleDropDown.open {
+          display: block;
+      }
+      .ulMenu > li > ul.singleDropDown li {
+          display: block;
+          padding: 0;
+          border-bottom: 1px solid #ccc
+      }
+      .ulMenu > li > ul.singleDropDown li a {
+          display: block;
+          padding: 10px 0 10px 25px;
+          color: #1a1a1a;
+          font-size: 1.15em;
+      }
+      .menuContainer .mainMenu > ul,
+      .topHeader {
+          transition: width 0.5s ease 0s;
+      }
+      .menuContainer .mainMenu > ul > li {
+          display: block;
+          padding: 0;
+          margin: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, .2);
+      }
+      .menuContainer .mainMenu > ul > li > a {
+          display: block;
+          color: #fff;
+          padding: 15px 25px;
+          font-size: 1.15em;
+      }
+      .aui .ulMenu a.azul1,
+      .aui .ulMenu a.azul1:hover {
+          color: #fff;
+      }
+      .addMenu {
+          display: none;
+      }
+      .topHeader {
+          height: 38px;
+          left: 0;
+          overflow: hidden;
+          position: fixed;
+          top: 0;
+          transition: width 0.5s ease 0s;
+          width: 0px;
+          z-index: 999;
+          padding: 0;
+          font-size: .8em;
+          background: #384452;
+      }
+      .logoTmx {
+          position: absolute;
+          left: 50%;
+          margin: 0 0 0 -25px;
+          top: 12px;
+      }
+      body {
+          transition: padding 0.5s ease 0s;
+          font-size: 13px;
+          width: 100%;
+          overflow-x: hidden;
+      }
+      body.side-menu-opened {
+          padding-left: 85%;
+          width: 100%;
+          ;
+          overflow: hidden;
+          overflow: -webkit-paged-y;
+      }
+      body.side-menu-opened .topHeader,
+      body.side-menu-opened .mainMenu > ul,
+      body.side-menu-opened .logedUser {
+          width: 85%;
+      }
+      .bigSubOptions,
+      .bigSubmenu {
+          height: auto !important;
+          position: relative;
+          visibility: visible;
+      }
+      .bigSubmenu .fullBox > ul,
+      .bigSubmenu .fullBox > ul li {
+          width: 100%;
+          height: auto;
+      }
+      .bigSubmenu .fullBox > ul > li {
+          background: none;
+          border-bottom: 1px solid #ccc;
+      }
+      .innerMenu strong {
+          background: url('https://telmex.com/documents/20194/194737/down_arrow_big_2.svg') no-repeat 95% 15px;
+          display: block;
+          padding: 10px 25px;
+          ;
+          font-size: 1.05em;
+          font-weight: 300;
+      }
+      .innerMenu ul li a {
+          padding: 5px 25px;
+      }
+      .bigSubmenu .fullBox > ul > li .innerMenu strong.sel a {
+          color: #029ed9
+      }
+      .bigSubmenu .fullBox > ul {
+          background: #f3f4f6;
+          padding-top: 0px;
+      }
+      .bigSubmenu .fullBox > ul > li > a,
+      .bigSubmenu .fullBox > ul > li > a:visited {
+          color: #1a1a1a;
+      }
+      .bigSubmenu {
+          top: 0px;
+      }
+      .bigSubmenu .fullBox > ul > li > a:after {
+          content: '';
+      }
+      .bigSubmenu .fullBox > ul > li > a {} .imageMenu {
+          display: none;
+      }
+      .menuOpContainer {
+          position: Relative;
+          left: 0px;
+          width: 100%;
+          display: block;
+          margin-top: 0px !important;
+      }
+      .bigSubmenu .fullBox > ul > li div.innerMenuContent {
+          width: 100%;
+          background: #fff;
+      }
+      .singleDropDown {
+          display: block;
+          position: relative;
+          top: 0px;
+          width: 100%;
+          left: 0px;
+          padding: 0px;
+          color: #fff;
+      }
+      .innerMenu {
+          display: block;
+          width: 100%;
+          margin-top: 0px;
+      }
+      .innerMenu a {
+          display: block;
+      }
+      .bigSubOptions > li > a {
+          display: block;
+          padding: 5px 25px;
+      }
+      .bigSubOptions > li > .menuOpContainer,
+      .ulMenu > li .bigSubOptions > li.firstElem .menuOpContainer {
+          display: none;
+      }
+      body.side-menu-opened .ulMenu > li .bigSubOptions > li.firstElem .menuOpContainer {
+          display: none !important;
+      }
+      .ulMenu > li > div,
+      .aui .ulMenu > li > ul {
+          position: relative;
+          background: none;
+          top: 0px;
+          padding: 0;
+          height: auto;
+          overflow: hidden;
+          -webkit-transition: max-height 0.8s;
+          -moz-transition: max-height 0.8s;
+          transition: max-height 0.8s;
+          max-height: 0;
+          display: none;
+          width: 100%;
+      }
+      .ulMenu > li > div.open,
+      .ulMenu > li > ul.open {
+          display: block;
+          max-height: 1000px;
+      }
+      .innerMenu ul {
+          display: none;
+          padding-bottom: 15px;
+          padding-top: 15px;
+      }
+      .innerMenu .ope {
+          display: block;
+          border-bottom: 1px solid #ccc;
+      }
+      /*.bigSubmenu .fullBox > ul > li .menuOpContainer{display:none;}*/
+      
+      .bigSubOptions > li > .menuOpContainer.op,
+      .bigSubmenu .fullBox > ul > li:hover .menuOpContainer.op,
+      body.side-menu-opened .ulMenu > li .bigSubOptions > li.firstElem .menuOpContainer.op {
+          display: block !important;
+      }
+      /*SEARCH*/
+      
+      #onSiteSearch {
+          height: 27px;
+          top: 51px;
+          width: 100%;
+          padding: 0 0;
+          position: relative;
+          display: block;
+          margin: 0 auto;
+          box-sizing: border-box;
+          overflow: hidden;
+          border: none;
+          border-radius: 0px;
+          background: #f3f4f6;
+          max-height: 0;
+          height: auto;
+      }
+      #onSiteSearch form {
+          border: 1px solid #bdc4d0;
+          border-radius: 20px;
+          background: #ffffff;
+          float: none;
+          max-width: 90%;
+          margin: 15px auto;
+          display: block;
+      }
+      #onSiteSearch.openBar {
+          width: 100%;
+          max-height: 200px;
+      }
+      .aui #onSiteSearch .mainSearchBtn {
+          position: fixed;
+          right: 10px;
+          top: 8px;
+          border: 1px solid #bdc4d0;
+          padding: 6px 16px;
+          border-radius: 22px;
+          background-position: center center;
+      }
+      body.side-menu-opened #onSiteSearch .mainSearchBtn {
+          position: absolute;
+      }
+      /*LOGIN*/
+      
+      .asideMenu {
+          float: none;
+          margin-top: 0;
+      }
+      .asideMenu > div,
+      .asideMenu > a {
+          display: inline;
+          margin-left: 0px;
+              margin-right: 0px;
+
+          
+      }
+      .asideMenu:before {
+          background: none;
+      }
+      .menuContainer > .fullBox {
+          height: 50px;
+      }
+      .logedUser {
+          margin-right: 50px;
+      }
+      .logedUser {
+          top: 9px;
+      }
+      .logedUser > div {
+          position: fixed;
+          width: 100%;
+          left: 0;
+          top: 51px;
+          display: block;
+          -webkit-transition: max-height 0.5s;
+          -moz-transition: max-height 0.5s;
+          transition: max-height 0.5s;
+          max-height: 0;
+          background: #fcfcfc;
+          height: auto;
+          overflow: hidden;
+      }
+      body.side-menu-opened .logedUser {
+          display: none;
+      }
+      .logedUser > div.userOp {
+          max-height: 0px;
+      }
+      .logedUser nav {
+          position: relative;
+          width: 100%;
+          display: block;
+          left: 0;
+      }
+  }
+
+
+
+
+
+.searchContainer{position:relative;}
+          .sugerenciasBox{width:209px; position:absolute; top:30px; right:14px; background:#fcfcfc; border-top: 1px solid #ccc; padding:10px 0;}
+          .sugerenciasBox ul{list-style-type: none; font-size:.85em;}
+          .sugerenciasBox ul a{display:block; color:#55667a;}
+          .sugerenciasBox ul li{padding:5px 15px;}
+          .sugerenciasBox ul li.selected, .sugerenciasBox ul li:hover{background:#f3f4f5;}
+          .sugerenciasBox ul li.selected, .sugerenciasBox ul li:hover a{color:#0276BA;}
+          #innerSearchBox .sugerenciasBox{width:100%; top:87px; z-index: 99; right:0;}

